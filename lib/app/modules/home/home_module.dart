@@ -13,7 +13,7 @@ class HomeModule extends ChildModule {
         Bind<ITodoRepository>(
           (i) => TodoRepository(firestore: FirebaseFirestore.instance),
         ),
-        $HomeController,
+        Bind((i) => HomeController(i.get())),
       ];
 
   @override
